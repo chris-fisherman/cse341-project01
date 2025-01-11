@@ -3,21 +3,20 @@
 /****************************/
 const express = require('express')
 const router = express()
-const contactsRoutes = require('./contactsRoutes')
+const contactsController = require('../controllers/contactsControllers')
 
 
 /****************************/
 /*** ROUTES ***/
 /****************************/
-/*** main ***/
-router.get('/', (req, res) => {
-    res.send('Hello World')
-})
-/*** contacts ***/
-router.use('/contacts', contactsRoutes)
+/*** get all contacts ***/
+router.get('/', contactsController.getAllContacts)
+/*** get single contact ***/
+router.get('/:id', contactsController.getSingleContact)
 
 
 /****************************/
 /*** EXPORTS ***/
 /****************************/
 module.exports = router
+

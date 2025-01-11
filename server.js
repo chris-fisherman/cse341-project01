@@ -7,8 +7,16 @@ const port = process.env.PORT || 3000
 const routes = require('./routes')
 const mongodb = require('./data/database')
 
+
+/****************************/
+/*** ROUTES ***/
+/****************************/
 app.use('/', routes)
 
+
+/****************************/
+/*** LISTEN PORT ***/
+/****************************/
 mongodb.initDb((err) => {
     if(err) {
         console.log(err)
