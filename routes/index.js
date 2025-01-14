@@ -10,7 +10,7 @@ const contactsRoutes = require('./contactsRoutes');
 /****************************/
 /*** main ***/
 router.get('/', (req, res) => {
-	res.send('Hello World');
+  res.send('Hello World');
 });
 /*** contacts ***/
 router.use('/contacts', contactsRoutes);
