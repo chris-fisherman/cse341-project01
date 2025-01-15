@@ -12,6 +12,12 @@ const contactsController = require('../controllers/contactsControllers');
 router.get('/', contactsController.getAllContacts);
 /*** get single contact ***/
 router.get('/:id', contactsController.getSingleContact);
+/*** create contact ***/
+router.post('/', contactsController.createContact);
+/*** update contact ***/
+router.put('/:id', contactsController.updateContact);
+/*** delete contact ***/
+router.delete('/:id', contactsController.deleteContact);
 
 /****************************/
 /*** EXPORTS ***/
