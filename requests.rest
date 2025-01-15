@@ -34,3 +34,40 @@ Content-Type: application/json
 
 ### DELETE CONTACT
 DELETE http://localhost:3000/contacts/6787cbdbaacfbd7164bce742 HTTP/1.1
+
+//****************************//
+//*** ON LIVE SERVER - RENDER ***//
+//****************************//
+
+### GET ALL CONTACTS
+GET https://cse341-project01-server.onrender.com/contacts
+
+### GET CONTACT BY ID
+GET https://cse341-project01-server.onrender.com/contacts/6782929915a805c5d0674fed
+
+### CREATE CONTACT
+POST https://cse341-project01-server.onrender.com/contacts HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "Chris 2",
+    "lastName": "Peraza",
+    "email": "christianperaza@gmail.com",
+    "favoriteColor": "green",
+    "birthday": "03/13/2000"
+}
+
+### UPDATE CONTACT
+PUT https://cse341-project01-server.onrender.com/contacts/6787d3265d6a5aa1f75e44e5 HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "Chris Updated",
+    "lastName": "Martinez",
+    "email": "paulinamartinez@gmail.com",
+    "favoriteColor": "purple",
+    "birthday": "04/04/2006"
+}
+
+### DELETE CONTACT
+DELETE https://cse341-project01-server.onrender.com/contacts/6787cd39bd7516ce235c3c25 HTTP/1.1
