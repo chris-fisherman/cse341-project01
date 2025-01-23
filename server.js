@@ -28,6 +28,13 @@ app.use((req, res, next) => {
 app.use('/', routes);
 
 /****************************/
+/*** ERROR HANDLING ***/
+/****************************/
+process.on('uncaughtException', (err, origin) => {
+  console.log(process.stderr.fd, `Caught exception: ${err}\n` + `Exception origin ${origin}`);
+});
+
+/****************************/
 /*** LISTEN PORT ***/
 /****************************/
 mongodb.initDb((err) => {
