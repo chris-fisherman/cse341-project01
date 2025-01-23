@@ -4,6 +4,7 @@
 const express = require('express');
 const router = express();
 const contactsController = require('../controllers/contactsControllers');
+const validation = require('../middleware/validation');
 
 /****************************/
 /*** ROUTES ***/
@@ -13,9 +14,9 @@ router.get('/', contactsController.getAllContacts);
 /*** get single contact ***/
 router.get('/:id', contactsController.getSingleContact);
 /*** create contact ***/
-router.post('/', contactsController.createContact);
+router.post('/', validation.validateContact, contactsController.createContact);
 /*** update contact ***/
-router.put('/:id', contactsController.updateContact);
+router.put('/:id', validation.validateContact, contactsController.updateContact);
 /*** delete contact ***/
 router.delete('/:id', contactsController.deleteContact);
 
